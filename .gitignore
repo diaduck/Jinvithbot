@@ -8,6 +8,11 @@ cached_lm_GPT2Tokenizer_64_jinvithoughts_flat.txt.lock
 
 /generator/model/
 
+/bot/DiaBotImport/.gradle/
+/bot/DiaBotImport/build/
+/bot/DiaBotImport/.idea/
+
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
@@ -46,3 +51,4 @@ bin/
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
