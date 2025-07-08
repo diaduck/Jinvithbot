@@ -1,36 +1,24 @@
-from transformers import GPT2Tokenizer, GPT2LMHeadModel, TextDataset, DataCollatorForLanguageModeling, Trainer, TrainingArguments
+from transformers import GPT2LMHeadModel, GPT2Tokenizer, pipeline
 
-tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
-model = GPT2LMHeadModel.from_pretrained("gpt2")
+def generate_and_save(prompt, model_dir, output_file, max_length=20, num_return_sequences=5):
+    # Load tokenizer and model from the directory
+    tokenizer = GPT2Tokenizer.from_pretrained(model_dir, local_files_only=True)
+    model = GPT2LMHeadModel.from_pretrained(model_dir, local_files_only=True)
 
-dataset = TextDataset(
-    tokenizer=tokenizer,
-    file_path="jinvithoughts_flat.txt",
-    block_size=64,
-)
+    # Setup text generation pipeline (no local_files_only here!)
+    generator = pipeline(
+        'text-generation',
+        model=model,
+        tokenizer=tokenizer
+    )
 
-data_collator = DataCollatorForLanguageModeling(
-    tokenizer=tokenizer, mlm=False,
-)
+    # Generate sequences
+    results = generator(prompt, max_length=max_length, num_return_sequences=num_return_sequences)
 
-training_args = TrainingArguments(
-    output_dir="./gpt2-jinvithoughts",
-    overwrite_output_dir=True,
-    num_train_epochs=3,
-    per_device_train_batch_size=4,
-    save_steps=10_000,
-    save_total_limit=2,
-)
+    # Write generated sequences to a file
+    with open(output_file, "w", encoding="utf-8") as f:
+        for i, output in enumerate(results, 1):
+            f.write(f"=== Output {i} ===\n")
+            f.write(output['generated_text'] + "\n\n")
 
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    data_collator=data_collator,
-    train_dataset=dataset,
-)
-
-trainer.train()
-
-# **IMPORTANT: Save both tokenizer and model**
-tokenizer.save_pretrained("./gpt2-jinvithoughts")
-model.save_pretrained("./gpt2-jinvithoughts")
+    print(f"Saved {len(results)} generated sequences to '{output_file}'")
