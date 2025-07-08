@@ -27,7 +27,7 @@ def generate_and_save(prompt, model_dir, output_file, max_length=20, num_return_
 if __name__ == "__main__":
     generate_and_save(
         prompt="",
-        model_dir="./gpt2-jinvithoughts",
+        model_dir="crap and crud/gpt2-jinvithoughts",
         output_file="Generated Outputs/4_generated_output.txt",
         max_length=20,
         num_return_sequences=50

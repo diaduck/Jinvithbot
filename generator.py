@@ -1,6 +1,6 @@
 from transformers import GPT2LMHeadModel, GPT2Tokenizer, pipeline
 
-model_path = "./gpt2-jinvithoughts"
+model_path = "crap and crud/gpt2-jinvithoughts"
 tokenizer = GPT2Tokenizer.from_pretrained(model_path)
 model = GPT2LMHeadModel.from_pretrained(model_path)
 
