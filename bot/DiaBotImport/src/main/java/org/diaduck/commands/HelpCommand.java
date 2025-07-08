@@ -1,7 +1,6 @@
-package org.diaduck;
+package org.diaduck.commands;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import org.diaduck.commands.Command;
 
 public class HelpCommand implements Command {
     @Override
