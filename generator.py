@@ -13,7 +13,6 @@ generator = pipeline(
 
 results = generator("What's ", max_length=20, num_return_sequences=5)
 
-# Save to file
 with open("Generated Outputs/4_generated_output.txt", "w") as f:
     for i, output in enumerate(results):
         f.write(f"=== Output {i+1} ===\n")

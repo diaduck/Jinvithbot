@@ -1,18 +1,15 @@
 from transformers import GPT2LMHeadModel, GPT2Tokenizer, pipeline
 
 def generate_and_save(prompt, model_dir, output_file, max_length=20, num_return_sequences=5):
-    # ✅ Correct: Load tokenizer and model locally
     tokenizer = GPT2Tokenizer.from_pretrained(model_dir, local_files_only=True)
     model = GPT2LMHeadModel.from_pretrained(model_dir, local_files_only=True)
 
-    # ✅ Fixed: No local_files_only here
     generator = pipeline(
         'text-generation',
         model=model,
         tokenizer=tokenizer
     )
 
-    # ✅ You can add truncation if needed to suppress the warning
     results = generator(
         prompt,
         max_length=max_length,
