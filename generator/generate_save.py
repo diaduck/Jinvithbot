@@ -24,15 +24,16 @@ def generate_and_save(prompt, model_dir, output_file, max_length=20, num_return_
 
     print(f"Saved {len(results)} generated sequences to '{output_file}'")
 
-changeablePrompt = "this is a third test prompt"
+changeablePrompt = ""
 
 if __name__ == "__main__":
     generate_and_save(
         prompt=changeablePrompt,
         model_dir="generator/model/gpt2-jinvithoughts",
-        output_file=f"Generated Outputs/Prompts/{changeablePrompt}",
+        #output_file=f"Generated Outputs/Prompts/{changeablePrompt}",
+        output_file="Generated Outputs/Prompt-Free/5",
         max_length=20,
-        num_return_sequences=1
+        num_return_sequences=20
     )
 
     global output_file
