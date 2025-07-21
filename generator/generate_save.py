@@ -12,8 +12,8 @@ def generate_and_save(prompt, model_dir, output_file, max_length=1, num_return_s
 
     results = generator(
         prompt,
-        max_length=max_length,
-        num_return_sequences=num_return_sequences,
+        max_length=1,
+        num_return_sequences=1,
         truncation=True
     )
 

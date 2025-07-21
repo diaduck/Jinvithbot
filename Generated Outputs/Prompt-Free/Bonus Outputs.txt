@@ -235,3 +235,19 @@ If you're a wine drinker and want to get a little more alcohol you shouldn't try
 If you're a wine drinker and want to get a little more alcohol you should definitely try drinking a bad glass of wine.
 
 If you're a wine drinker and want to
+
+
+
+
+
+
+=== Output 1 ===
+Cameron Diaz was a really good student last year.
+
+He was an English teacher at the school where he was studying.
+
+The teacher was a Korean American.
+
+He was a good student.
+
+If only Cameron Diaz would have known how much better he would be.
