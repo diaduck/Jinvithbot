@@ -31,7 +31,7 @@ if __name__ == "__main__":
         prompt=changeablePrompt,
         model_dir="generator/model/gpt2-jinvithoughts",
         #output_file=f"Generated Outputs/Prompts/{changeablePrompt}",
-        output_file="Generated Outputs/Prompt-Free/5",
+        output_file="Generated Outputs/Prompt-Free/5.txt",
         max_length=20,
         num_return_sequences=20
     )
