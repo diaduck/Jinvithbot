@@ -1,6 +1,6 @@
 from transformers import GPT2LMHeadModel, GPT2Tokenizer, pipeline
 
-def generate_and_save(prompt, model_dir, output_file, max_length=20, num_return_sequences=5):
+def generate_and_save(prompt, model_dir, output_file, max_length=1, num_return_sequences=1):
     tokenizer = GPT2Tokenizer.from_pretrained(model_dir, local_files_only=True)
     model = GPT2LMHeadModel.from_pretrained(model_dir, local_files_only=True)
 
@@ -32,8 +32,8 @@ if __name__ == "__main__":
         model_dir="generator/model/gpt2-jinvithoughts",
         #output_file=f"Generated Outputs/Prompts/{changeablePrompt}",
         output_file="Generated Outputs/Testing-A-OneLine/2.txt",
-        max_length=1,
-        num_return_sequences=1
+        # max_length=1,
+        # num_return_sequences=1
     )
 
     global output_file
