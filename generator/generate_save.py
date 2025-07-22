@@ -12,8 +12,8 @@ def generate_and_save(prompt, model_dir, output_file, max_length=1, num_return_s
 
     results = generator(
         prompt,
-        max_length=1,
-        num_return_sequences=1,
+        max_length=50,
+        num_return_sequences=100,
         truncation=True
     )
 
@@ -31,9 +31,9 @@ if __name__ == "__main__":
         prompt=changeablePrompt,
         model_dir="generator/model/gpt2-jinvithoughts",
         #output_file=f"Generated Outputs/Prompts/{changeablePrompt}",
-        output_file="Generated Outputs/Testing-A-OneLine/2.txt",
-        # max_length=1,
-        # num_return_sequences=1
+        output_file="Generated Outputs/Testing-A-OneLine/10.txt",
+        # max_length=50,
+        # num_return_sequences=100
     )
 
     global output_file

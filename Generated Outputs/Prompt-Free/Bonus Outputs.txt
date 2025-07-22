@@ -251,3 +251,15 @@ The teacher was a Korean American.
 He was a good student.
 
 If only Cameron Diaz would have known how much better he would be.
+
+
+=== Output 2 ===
+I can't imagine how anyone could possibly be better than me.
+
+If I were a man I would never be able to imagine myself as the perfect sex toy, or as the most beautiful girl I could possibly imagine being.
+
+I don't know how I could possibly be any better than you.
+
+I could be any worse than you!
+
+I could be any worse than you.
